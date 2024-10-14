@@ -3,7 +3,10 @@ provider "aws" {
   version = "~> 3.0"
 }
 
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name"
+resource "aws_s3_bucket" "tf-s3" {
+  bucket = "tf-s3"
   acl    = "private"
+  tags = {
+    Name = var.tf-s3
+  }
 }
